@@ -7,20 +7,26 @@ export const todoReducer = (state = initialstate, action) => {
     switch(type){
         case CREATE_TODO:
             const {todo} = payload
-            return state.concat(todo)
+            const newTodo = {
+                text : todo,
+                isCompleted : false
+            }
+            return state.concat(newTodo)
         case DELETE_TODO:
             const {id } = payload
-            return(state.map(todo => todo.name !== id))
-        case UPDATE_TODO:
+            return state.filter(todo => todo.text !== id)
+            
+        case UPDATE_TODO:{
             const {id} = payload
             return (
-                state.map(todod => {
-                    if(todo.name === id){
-                        todo.name = todo.name + 'updated'
+                state.map(todo => {
+                    if(todo.text === id){
+                        todo.text = todo.text + 'updated'
                     }
                     return todo
                 })
             )
+        }
         default:
             return state
     }

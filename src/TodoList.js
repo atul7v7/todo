@@ -7,14 +7,14 @@ const TodoList = ({todos, removeTodo, updateTodo}) => {
     return(
         <div>
             {
-                todos.map(todo => <TodoItem todo = {todo} removeTodo = {removeTodo} updateTodo = {updateTodo} />)
+                todos.map(todo => <TodoItem key = {todo.id} todo = {todo} removeTodo = {removeTodo} updateTodo = {updateTodo} />)
             }
         </div>
     )
 } 
 
 const mapStateToProps = (state) => ({
-    todos : state
+    todos : state.todo
 })
 const mapDispatchToProps = dispatch =>({
     removeTodo : (id) => dispatch(deleteTodo(id)),

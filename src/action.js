@@ -3,7 +3,7 @@ export const DELETE_TODO = 'DELETE_TODO'
 export const UPDATE_TODO = 'UPDATE_TODO'
 
 
-export const createTdod = (todo) => ({
+export const createTodo = (todo) => ({
     type : CREATE_TODO,
     payload : {todo}
 })

@@ -1,8 +1,8 @@
-const {createStore, combineReducer} from 'redux'
+import {createStore, combineReducers} from 'redux'
 
 import {todoReducer} from './reducer'
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
     todo : todoReducer
 })
 
