@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { createTodo } from './action'
+import { createThunk } from './thunk'
 import { connect } from 'react-redux'
 
 const CreateTodo = ({onCreate}) => {
@@ -17,6 +17,6 @@ const CreateTodo = ({onCreate}) => {
     )
 }
 const mapDispatchToProps = dispatch => ({
-    onCreate : (data) => dispatch(createTodo(data))
+    onCreate : (data) => dispatch(createThunk(data))
 })
 export default connect(null, mapDispatchToProps)(CreateTodo)
